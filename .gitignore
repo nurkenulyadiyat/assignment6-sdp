@@ -1,0 +1,12 @@
+target/
+.idea/
+*.iml
+.DS_Store
+
+# Local study notes and editable supporting files
+DEFENSE*.md
+START_HERE*.md
+docs/*.docx
+docs/verification.txt
+docs/*.dot
+docs/*.svg
