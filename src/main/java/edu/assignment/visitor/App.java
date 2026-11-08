@@ -15,6 +15,12 @@ public final class App {
         System.out.println("Total size: " + new TotalSizeVisitor().calculate(root) + " bytes");
         SearchVisitor search = new SearchVisitor(name -> name.endsWith(suffix), minimumSize);
         printMatches(search.search(root), suffix, minimumSize);
+
+        StatisticsVisitor statistics = new StatisticsVisitor();
+        statistics.analyze(root);
+        System.out.println("Files: " + statistics.getFileCount());
+        System.out.println("Directories (including root): " + statistics.getDirectoryCount());
+        System.out.println("Maximum depth (root = 0): " + statistics.getMaxDepth());
     }
 
     private static void printMatches(List<String> matches, String suffix, long minimumSize) {
